@@ -36,7 +36,7 @@ const getAmount = () => {
   if(!getAmount()) return window.location.replace("/deposit.html");
   try {
     const response = await fetch(
-      "/api/user/find",
+      "https://crescentpips-backend.glitch.me/api/user/find",
       {
         method: "POST",
         headers: { "content-type": "application/json" },
@@ -73,7 +73,7 @@ const submit_payment_plan= async (data) => {
   document.querySelector(`#${data.button_id}`).innerHTML="Proccessing..."
   try {
     const response = await fetch(
-      "/api/user/create_deposit",
+      "https://crescentpips-backend.glitch.me/api/user/create_deposit",
       {
         method: "POST",
         headers: { "content-type": "application/json" },

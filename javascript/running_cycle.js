@@ -88,7 +88,7 @@ const shape_result = (userInfo) => {
   try {
     const response = await fetch(
       // "http://localhost:5000/api/user/transactions/fetch",
-      "/api/user/investments/fetch",
+      "https://crescentpips-backend.glitch.me/api/user/investments/fetch",
       {
         method: "POST",
         headers: { "content-type": "application/json" },

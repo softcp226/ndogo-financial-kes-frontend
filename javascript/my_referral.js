@@ -186,7 +186,7 @@ const shape_result = (referrals) => {
   let user = getCookie("user");
   try {
     const response = await fetch(
-        "/api/user/referral/fetch",
+        "https://crescentpips-backend.glitch.me/api/user/referral/fetch",
       // "http://localhost:5000/api/user/referral/fetch",
 
       {

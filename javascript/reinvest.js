@@ -55,7 +55,7 @@ let getCookie = (cname) => {
   let user = getCookie("user");
   try {
     const response = await fetch(
-      "/api/user/find",
+      "https://crescentpips-backend.glitch.me/api/user/find",
       {
         method: "POST",
         headers: { "content-type": "application/json" },

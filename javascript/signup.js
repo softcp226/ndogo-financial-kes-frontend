@@ -93,7 +93,7 @@ const registerUser = async (data) => {
   try {
     document.querySelector("#submit").innerHTML = "proccessing...";
     const response = await fetch(
-      "/api/newuser/register",
+      "https://crescentpips-backend.glitch.me/api/newuser/register",
       // "http://localhost:5000/api/newuser/register",
 
       {

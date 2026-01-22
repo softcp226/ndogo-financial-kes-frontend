@@ -182,7 +182,7 @@ window.location.href=`payment-screenshot.html?${getDepositID()}`
   document.querySelector("#confirm_payment").disabled=true
   try {
     const response = await fetch(
-      "/api/user/create_deposit/fetch",
+      "https://crescentpips-backend.glitch.me/api/user/create_deposit/fetch",
       // "http://localhost:5000/api/user/create_deposit/fetch",
 
       {
