@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Highcharts Example</title>
+
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script type="text/javascript">
+$(function () {
+        $('#container').highcharts({
+            title: {
+                text: 'RNA',
+                x: -20 //center
+            },
+            subtitle: {
+                text: 'Outage Reasons',
+                x: -20
+            },
+            xAxis: {
+                categories: ['18-Jul-14', '19-Jul-14', '20-Jul-14', '21-Jul-14', '22-Jul-14', '23-Jul-14',
+                    '24-Jul-14', '25-Jul-14', '26-Jul-14', '27-Jul-14', '28-Jul-14', '29-Jul-14']
+            },
+            yAxis: {
+                title: {
+                    text: 'Outage'
+                },
+                plotLines: [{
+                    value: 0,
+                    width: 1,
+                    color: '#808080'
+                }]
+            },
+            tooltip: {
+                valueSuffix: ''
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle',
+                borderWidth: 0
+            },
+            series: [{
+                name: 'RNA - CP ( Radio Network Availability - Customer Perceived)',
+                data: [99.75, 99.77, 99.78, 99.84, 99.82, 99.82, 99.76, 99.78, 99.8, 99.65, 99.94, 99.8]
+            }],
+            credits: {
+                enabled: false
+            }
+        });
+    });
+
+
+        </script>
+    </head>
+    <body>
+<script src="highcharts.js"></script>
+<script src="exporting.js"></script>
+
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+    </body>
+</html>

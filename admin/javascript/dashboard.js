@@ -24,67 +24,7 @@ function getCookie(cname) {
   window.location.replace("/admin");
 }
 
-const handleChangeStatus = async (event, user_id) => {
-  event.target.innerHTML = "Proccessing...";
-  let token = getCookie("admin_token");
-  let admin = getCookie("admin");
-  try {
-    const response = await fetch(
-      "https://zionintercontinentalb-backend.glitch.me/api/admin/users/activate_user",
-      {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({ token, admin, user: user_id }),
-      },
-    );
-    const result = await response.json();
-    console.log(result);
-    if (result.error) {
-      event.target.innerHTML = "Try again";
-      document.querySelector(".errMessage").innerHTML = result.errMessage;
-      alert(result.errMessage);
-    } else {
-      alert(result.message);
-      event.target.innerHTML = "Success";
-      window.location.href = "/admin/dashboard.html";
-    }
-  } catch (err) {
-    event.target.innerHTML = "Try again";
-    console.log(err);
-    alert(err.message);
-  }
-};
-
-const handle_suspend_user = async (event, user_id) => {
-  event.target.innerHTML = "Proccessing...";
-  let token = getCookie("admin_token");
-  let admin = getCookie("admin");
-  try {
-    const response = await fetch(
-      "https://zionintercontinentalb-backend.glitch.me/api/admin/users/suspend_user",
-      {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({ token, admin, user: user_id }),
-      },
-    );
-    const result = await response.json();
-    console.log(result);
-    if (result.error) {
-      event.target.innerHTML = "Try again";
-      document.querySelector(".errMessage").innerHTML = result.errMessage;
-      alert(result.errMessage);
-    } else {
-      alert(result.message);
-      event.target.innerHTML = "Success";
-      window.location.href = "/admin/dashboard.html";
-    }
-  } catch (err) {
-    event.target.innerHTML = "Try again";
-    console.log(err);
-    alert(err.message);
-  }
-};
+//
 
 const handle_delete_user = async (event, user_id) => {
   event.target.innerHTML = "Proccessing...";
@@ -92,9 +32,10 @@ const handle_delete_user = async (event, user_id) => {
   let admin = getCookie("admin");
   try {
     const response = await fetch(
-      "https://zionintercontinentalb-backend.glitch.me/api/admin/users/delete_user",
+      "/api/admin/users/delete_user",
+      // "http://localhost:5000/api/admin/users/delete_user",
       {
-        method: "POST",
+        method: "DELETE",
         headers: { "content-type": "application/json" },
         body: JSON.stringify({ token, admin, user: user_id }),
       },
@@ -119,57 +60,50 @@ const handle_delete_user = async (event, user_id) => {
 
 const createAndAppendElement = (element) => {
   const section = document.createElement("section");
-  const UNH4 = document.createElement("h4");
-  const ANH4 = document.createElement("h4");
-  const EPH4 = document.createElement("h4");
-  // const balance = document.createElement("h4");
-  const enrollment_date = document.createElement("h4");
-  UNH4.innerHTML = `${element.first_name} ${element.last_name}`;
-  ANH4.innerHTML = element.account_number;
-  EPH4.innerHTML = `${element.email} || ${element.phone}`;
+  const br=document.createElement("br")
+  const E_M = document.createElement("a");
+  const final_balance = document.createElement("h4");
+  const P_L = document.createElement("h4");
+  const AI = document.createElement("h4");
+  const RF = document.createElement("h4");
+  const CCBTN = document.createElement("button");
+  const DCBTN = document.createElement("button");
+  const RIBTN = document.createElement("button");
+  E_M.innerHTML = `${element.email}|| ${ element.phone_number}`
+  E_M.ondblclick=()=>window.location.href=`addbill.html?${element._id}`
+  // E_M.append(br, element.phone_number)
+  // || ${element.phone_number}`;
+  final_balance.innerHTML = `$${element.final_balance
+    .toString()
+    .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
+  P_L.innerHTML = element.registration_date
+  //   .toString()
+  //   .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
 
-  // balance.innerHTML = `$${element.balance
-  //   .toString()
-  //   .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
-  enrollment_date.innerHTML = element.enrollment_date || "not available";
-  const statusBTn = document.createElement("button");
-  // const susBTN = document.createElement("button");
-  const delBTN = document.createElement("button");
-  statusBTn.className =
-    element.is_active != true ? "btn btn-secondary" : "btn btn-primary";
-  // susBTN.className =
-  //   element.is_suspended != true ? "btn btn-secondary" : "btn btn-primary";
-  delBTN.className = "btn btn-danger";
-  statusBTn.innerHTML = element.is_active != true ? "INACTIVATED" : "ACTIVATED";
-  // susBTN.innerHTML =
-  //   element.is_suspended != true ? "SUSPEND USER" : "SUSPENDED";
-  delBTN.innerHTML = "DELETE USER";
-  statusBTn.id = element._id;
-  // susBTN.id = element._id;
-  delBTN.id = element._id;
-  statusBTn.onclick = () => handleChangeStatus(event, element._id);
-  // susBTN.onclick = () => handle_suspend_user(event, element._id);
-  delBTN.onclick = () => handle_delete_user(event, element._id);
-  // ANH4.className = "btn btn-primary";
-  // ANH4.style.color = "#fff";
-  // ANH4.onclick = () =>
-  //   (window.location.href = `/admin/fund-user.html?${element.account_number}`);
-  // // refH4.innerHTML = element.refrence_no;
-  // ltH4.innerHTML = element.loan_type;
-  // amtH4.innerHTML = `$${element.loan_amount
-  //   .toString()
-  //   .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
-  // itH4.innerHTML = element.interest;
-  section.append(
-    UNH4,
-    ANH4,
-    EPH4,
-    // balance,
-    enrollment_date,
-    statusBTn,
-    // susBTN,
-    delBTN
-  );
+  AI.innerHTML = `$${element.active_investment
+    .toString()
+    .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
+  RF.innerHTML = `$${element.referral_bonus
+    .toString()
+    .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
+
+  CCBTN.innerHTML = "CREDIT USER";
+  DCBTN.innerHTML = "DELETE USER";
+  RIBTN.innerHTML = "RAISE INVESTMENT";
+
+  CCBTN.className = "btn btn-primary";
+  DCBTN.className = "btn btn-danger";
+  RIBTN.className = "btn btn-primary";
+
+  CCBTN.onclick = () =>
+    (window.location.href = `/admin/fund-user.html?${element._id}`);
+
+  DCBTN.onclick = () => handle_delete_user(event, element._id);
+
+  RIBTN.onclick = () =>
+    (window.location.href = `/admin/raise-investment.html?${element._id}`);
+
+  section.append(E_M,  P_L, final_balance, AI, RF, CCBTN, DCBTN,RIBTN);
   document.querySelector(".history-table").append(section);
 };
 const setText = (userInfo) => {
@@ -181,7 +115,8 @@ const setText = (userInfo) => {
   let admin = getCookie("admin");
   try {
     const response = await fetch(
-      "https://zionintercontinentalb-backend.glitch.me/api/admin/fetch_users",
+      "/api/admin/fetch_users",
+      // "http://localhost:5000/api/admin/fetch_users",
       {
         method: "POST",
         headers: { "content-type": "application/json" },

@@ -15,16 +15,7 @@ const look_for_user = (cname) => {
   window.location.href = "/signin.html";
 };
 
-let user_is_active = look_for_user("is_active");
-if (user_is_active != "true") {
-  if (window.location.href.includes("inactive.html")) {
 
-  }else{
-window.location.href = "/inactive.html";
-  }
-  
-  // }
-}
 
 ((cname) => {
   let name = cname + "=";

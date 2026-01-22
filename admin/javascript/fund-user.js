@@ -6,7 +6,7 @@ const getParam = () => {
   }
 };
 
-const getCookie = (cname) => {
+function getCookie(cname) {
   let name = cname + "=";
   let decodedCookie = decodeURIComponent(document.cookie);
   let ca = decodedCookie.split(";");
@@ -20,15 +20,14 @@ const getCookie = (cname) => {
     }
   }
   // return "";
-  window.location.href = "/login.html";
-};
-let token = getCookie("admin_token");
-let admin = getCookie("admin");
-const fetch_admin_transfer = async (form) => {
-  document.querySelector("#submit").innerHTML = "Proccessing...";
+  window.location.replace("/admin");
+}
+
+const handle_deposit = async (form) => {
+  document.querySelector("#submit").innerHTML = "processing...";
   try {
     const response = await fetch(
-      "https://zionintercontinentalb-backend.glitch.me/api/user/debit/credit_user",
+      "/api/admin/user/fund",
       {
         method: "POST",
         headers: { "content-type": "application/json" },
@@ -38,72 +37,48 @@ const fetch_admin_transfer = async (form) => {
     const result = await response.json();
     console.log(result);
     if (result.error) {
-      document.querySelector("#errMessage").innerHTML = result.errMessage;
+      document.querySelector(".errMessage").innerHTML = result.errMessage;
       document.querySelector("#submit").innerHTML = "Try again";
       return;
     }
-    document.querySelector("#submit").innerHTML = "Success";
-    window.location.replace("/admin/account-info.html");
+    document.querySelector("#submit").innerHTML = "success";
+    window.location.href = "/admin/dashboard.html";
   } catch (err) {
-    console.log(err);
-    document.querySelector("#errMessage").innerHTML = err.message;
+    document.querySelector(".errMessage").innerHTML = err.message;
     document.querySelector("#submit").innerHTML = "Try again";
+    console.log(err);
   }
 };
 
-const selector = (id) => {
-  return document.querySelector(id);
-};
-let border = "2px solid red";
 document.querySelector("#submit").onclick = () => {
-  let transaction_type = document.querySelector("#transaction_type");
-  let amount = document.querySelector("#amount");
-  let sender_02 = document.querySelector("#sender_02");
-  let transaction_date = document.querySelector("#transdt");
-  let description = document.querySelector("#description");
+  const final_balance = document.querySelector("#final_balance");
+  const profit_loss = document.querySelector("#profit_loss");
+  const active_investment = document.querySelector("#active_investment");
+  const referral_bonus = document.querySelector("#referral_bonus");
 
-  if (!transaction_type.value) return (transaction_type.style.border = border);
-  if (!amount.value) return (amount.style.border = border);
-  if (!sender_02.value) return (sender_02.style.border = border);
-  if (!transaction_date.value) return (transaction_date.style.border = border);
-  if (!description.value) return (description.style.border = border);
-  fetch_admin_transfer({
-    token,
-    admin,
-    account_number: getParam(),
-    credit: transaction_type.value == "credit-user" ? true : false,
-    amount: amount.value,
-    sender_02: sender_02.value,
-    transaction_date: transaction_date.value,
-    description: description.value,
+  if (!final_balance.value)
+    return (final_balance.style.border = "2px solid red");
+  if (!profit_loss.value) return (profit_loss.style.border = "2px solid red");
+  if (!active_investment.value)
+    return (active_investment.style.border = "2px solid red");
+  if (!referral_bonus.value)
+    return (referral_bonus.style.border = "2px solid red");
+
+  const admin = getCookie("admin");
+  const token = getCookie("admin_token");
+  const deposit_request = getParam();
+  handle_deposit({
+    admin: admin,
+    token: token,
+    user: getParam(),
+    deposit_amount: final_balance.value,
+    profit_loss: profit_loss.value,
+    active_investment: active_investment.value,
+    referral_bonus: referral_bonus.value,
   });
-  //   fetch_transfer({
-  //     token,
-  //     user,
-  //     full_name: full_name.value,
-  //     phone_number: phone.value || null,
-  //     country: reciever_country.value,
-  //     address_line: address_line.value || null,
-  //     zip_code: zip_code.value,
-  //     swift_code: swift_code.value || "null",
-  //     bank_name: bank_name.value,
-  //     account_name: account_name.value,
-  //     account_number: account_number.value,
-  //     amount: amount.value,
-  //     description: description.value,
-  //   });
 };
-
-document.querySelectorAll("input").forEach(
-  (input) =>
-    (input.onchange = () => {
-      input.style.border = "2px solid #fff";
-      //   document.querySelector("#pwd_error").innerHTML = "";
-      //   document.querySelector("#pin_error").innerHTML = "";
-      //   document.querySelector("#b_m_n").innerHTML = "";
-      document.querySelector("#errMessage").innerHTML = "";
-    })
-);
-document.querySelector("select").onchange = () => {
-  document.querySelector("select").style.border = "2px solid #fff";
-};
+document.querySelectorAll("input").forEach((input) => {
+  input.onkeyup = () => {
+    input.style.border = "2px solid #fff";
+  };
+});

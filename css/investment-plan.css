@@ -1,0 +1,31 @@
+section.plan-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  
+  width: 100%;
+  margin: auto;
+ /* margin-top: 10%; */
+  flex-wrap: wrap;
+}
+ section.plan-container > div {
+  width: 300px;
+  height: 500px;
+  background-color: #000;
+  border-radius: 15px;
+
+  /* box-shadow: 0 3px 15px rgb(0 0 0 / 5%); */
+  color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 0.375rem;
+
+   margin: 5px;
+   padding: 10px;
+ }
+
+ section.plan-container > div section{
+   display: flex;
+  align-items: center;
+  justify-content: space-around;
+ }

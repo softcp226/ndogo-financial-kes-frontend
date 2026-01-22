@@ -16,7 +16,9 @@ const fetch_admin = async (admin_form) => {
   // console.log(admin_form);
   try {
     const response = await fetch(
-      "https://zionintercontinentalb-backend.glitch.me/api/admin/login",
+      "/api/admin/login",
+      // "http://localhost:5000/api/admin/login",
+
       {
         method: "POST",
         headers: { "content-type": "application/json" },
@@ -30,10 +32,7 @@ const fetch_admin = async (admin_form) => {
       document.querySelector("#login").innerHTML = "Try again";
     } else {
       // const [token_01, user, is_active] = ;
-      setCookie(
-        result.message.token,
-        result.message.admin,
-      );
+      setCookie(result.message.token, result.message.admin);
       document.querySelector("#login").innerHTML = "Success";
     }
   } catch (err) {
@@ -63,4 +62,3 @@ document.querySelector("#user_name").onkeyup = (input) => {
 document.querySelector("#password").onkeyup = () => {
   document.querySelector("#password").style.border = "2px solid #fff";
 };
-
