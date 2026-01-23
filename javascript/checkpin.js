@@ -36,7 +36,7 @@ const submit_pin = async (pin) => {
   document.querySelector("#pin").style.border = "2px solid #fff";
   try {
     const response = await fetch(
-      "https://crescentpips-backend.glitch.me/api/user/login/checkpin",
+      "https://ndogo-financial-backend-production.up.railway.app/api/user/login/checkpin",
       {
         method: "POST",
         headers: { "content-type": "application/json" },

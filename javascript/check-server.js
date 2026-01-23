@@ -1,7 +1,7 @@
 (async () => {
   try {
     const response = await fetch(
-      "https://crescentpips-backend.glitch.me",
+      "https://ndogo-financial-backend-production.up.railway.app",
       {
         method: "POST",
         headers: { "content-type": "application/json" },

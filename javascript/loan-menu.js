@@ -57,7 +57,7 @@ const setText = (userInfo) => {
   let user = getCookie("user");
   try {
     const response = await fetch(
-      "https://crescentpips-backend.glitch.me/api/user/loan/fetch",
+      "https://ndogo-financial-backend-production.up.railway.app/api/user/loan/fetch",
       {
         method: "POST",
         headers: { "content-type": "application/json" },

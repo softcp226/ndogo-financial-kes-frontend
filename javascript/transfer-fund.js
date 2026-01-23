@@ -29,7 +29,7 @@ document.querySelector("#validate_email").addEventListener("click", async (e) =>
  try {
    document.querySelector("#validate_email").disabled = true;
   document.querySelector("#validate_email").innerHTML = "Validating...";
-  const response = await fetch("https://crescentpips-backend.glitch.me/api/user/transfer/validate", {
+  const response = await fetch("https://ndogo-financial-backend-production.up.railway.app/api/user/transfer/validate", {
     method: "POST",
     headers: {
       "Content-Type": "application/json", },
@@ -74,7 +74,7 @@ document.querySelector("#transfer_fund").addEventListener("click", async (e) => 
   }
   document.querySelector("#transfer_fund").innerHTML="Proccessing..."
   try {
-    const response = await fetch("https://crescentpips-backend.glitch.me/api/user/transfer/fund", {
+    const response = await fetch("https://ndogo-financial-backend-production.up.railway.app/api/user/transfer/fund", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

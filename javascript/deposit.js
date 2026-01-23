@@ -23,7 +23,7 @@ document.querySelector('#deposit').innerHTML = "Processing...";
   document.querySelector('#deposit').disabled = true;
   try {
     const response = await fetch(
-      "https://crescentpips-backend.glitch.me/api/user/find",
+      "https://ndogo-financial-backend-production.up.railway.app/api/user/find",
       {
         method: "POST",
         headers: { "content-type": "application/json" },

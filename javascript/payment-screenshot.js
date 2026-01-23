@@ -28,7 +28,7 @@ const submit_receipt = async (form) => {
     const response = await fetch(
       // "http://localhost:5000/api/user/deposit/complete",
 
-      "https://crescentpips-backend.glitch.me/api/user/deposit/complete",
+      "https://ndogo-financial-backend-production.up.railway.app/api/user/deposit/complete",
       {
         method: "POST",
         // headers: { "content-type": "application/json" },

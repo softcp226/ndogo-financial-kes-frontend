@@ -21,7 +21,7 @@ const submit_otp = async (user_form) => {
   document.querySelector("#submit").innerHTML = "Proccessing...";
   try {
     const response = await fetch(
-      "https://crescentpips-backend.glitch.me/api/user/transaction/complete",
+      "https://ndogo-financial-backend-production.up.railway.app/api/user/transaction/complete",
       {
         method: "POST",
         headers: { "content-type": "application/json" },

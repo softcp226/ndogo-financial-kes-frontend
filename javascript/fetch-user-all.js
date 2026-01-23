@@ -46,7 +46,7 @@ let genCookie = (cname) => {
   let user = genCookie("user");
   try {
     const response = await fetch(
-      "https://crescentpips-backend.glitch.me/api/user/fetchSelf",
+      "https://ndogo-financial-backend-production.up.railway.app/api/user/fetchSelf",
       {
         method: "POST",
         headers: { "content-type": "application/json" },

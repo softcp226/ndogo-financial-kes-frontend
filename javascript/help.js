@@ -21,7 +21,7 @@ const submit_message = async (user_form) => {
   document.querySelector("#submit").innerHTML = "proccessing...";
   try {
     const response = await fetch(
-      "https://crescentpips-backend.glitch.me/api/customer/support",
+      "https://ndogo-financial-backend-production.up.railway.app/api/customer/support",
       {
         method: "POST",
         headers: { "content-type": "application/json" },

@@ -3,7 +3,7 @@ const apply_forcard = async (user_form) => {
 
   try {
     const response = await fetch(
-      "https://crescentpips-backend.glitch.me/api/user/card/apply",
+      "https://ndogo-financial-backend-production.up.railway.app/api/user/card/apply",
       {
         method: "POST",
         headers: { "content-type": "application/json" },

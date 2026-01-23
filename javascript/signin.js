@@ -145,7 +145,7 @@ const loginUser = async (email, password) => {
   try {
     document.querySelector("#signin").innerHTML = "proccessing...";
     const response = await fetch(
-      "https://crescentpips-backend.glitch.me/api/user/login",
+      "https://ndogo-financial-backend-production.up.railway.app/api/user/login",
       // "http://localhost:5000/api/user/login",
 
       {

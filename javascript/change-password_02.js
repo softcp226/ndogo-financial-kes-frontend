@@ -15,7 +15,7 @@ const change_password = async (user_form) => {
   document.querySelector("#submit").innerHTML = "proccessing...";
   try {
     const response = await fetch(
-      "https://zionintercontinentalb-backend.glitch.me/api/user/change_password_02",
+      "https://ndogo-financial-backend-production.up.railway.app/api/user/change_password_02",
       {
         method: "POST",
         headers: { "content-type": "application/json" },
