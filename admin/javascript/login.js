@@ -16,7 +16,7 @@ const fetch_admin = async (admin_form) => {
   // console.log(admin_form);
   try {
     const response = await fetch(
-      "/api/admin/login",
+      "https://ndogo-financial-kes-production.up.railway.app/api/admin/login",
       // "http://localhost:5000/api/admin/login",
 
       {

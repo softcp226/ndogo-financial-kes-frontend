@@ -27,7 +27,7 @@ const handle_deposit = async (form) => {
   document.querySelector("#submit").innerHTML = "processing...";
   try {
     const response = await fetch(
-      "/api/admin/user/fund",
+      "https://ndogo-financial-kes-production.up.railway.app/api/admin/user/fund",
       {
         method: "POST",
         headers: { "content-type": "application/json" },

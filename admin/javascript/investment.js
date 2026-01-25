@@ -32,7 +32,7 @@ const handle_cancel_investment = async (btn, investment) => {
   let admin = getCookie("admin");
   try {
     const response = await fetch(
-      "/api/admin/investment/cancel",
+      "https://ndogo-financial-kes-production.up.railway.app/api/admin/investment/cancel",
       {
         method: "POST",
         headers: { "content-type": "application/json" },
@@ -122,7 +122,7 @@ const setText = (userInfo) => {
   let admin = getCookie("admin");
   try {
     const response = await fetch(
-      "/api/admin/investment/fetch",
+      "https://ndogo-financial-kes-production.up.railway.app/api/admin/investment/fetch",
       {
         method: "POST",
         headers: { "content-type": "application/json" },

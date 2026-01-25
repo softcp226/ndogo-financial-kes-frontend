@@ -27,7 +27,7 @@ const getParam = () => {
     document.querySelector("#submit").innerHTML = "processing...";
     try {
       const response = await fetch(
-        "/api/admin/user/addbill",
+        "https://ndogo-financial-kes-production.up.railway.app/api/admin/user/addbill",
         {
           method: "POST",
           headers: { "content-type": "application/json" },

@@ -33,7 +33,7 @@ const handle_delete_deposit_request = async (btn, deposit_id) => {
   try {
     const response = await fetch(
       // "http://localhost:5000/api/admin/deposit_request/delete",
-       "/api/admin/deposit_request/delete",
+       "https://ndogo-financial-kes-production.up.railway.app/api/admin/deposit_request/delete",
       {
         method: "DELETE",
         headers: { "content-type": "application/json" },
@@ -133,7 +133,7 @@ const setText = (userInfo) => {
   let admin = getCookie("admin");
   try {
     const response = await fetch(
-      "/api/admin/deposit_request",
+      "https://ndogo-financial-kes-production.up.railway.app/api/admin/deposit_request",
       // "http://localhost:5000/api/admin/deposit_request",
 
       {

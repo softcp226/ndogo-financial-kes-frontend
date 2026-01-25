@@ -30,7 +30,7 @@ const handle_approve_withdrawal = async (btn, withdrawal_request) => {
   let admin = getCookie("admin");
   try {
     const response = await fetch(
-      "/api/admin/withdrawal/fetch/withdrawal/approval",
+      "https://ndogo-financial-kes-production.up.railway.app/api/admin/withdrawal/fetch/withdrawal/approval",
       // "http://localhost:5000/api/admin/withdrawal/fetch/withdrawal/approval ",
       {
         method: "POST",
@@ -63,7 +63,7 @@ const handle_delete_withdrawal = async (btn, withdrawal_request) => {
   let admin = getCookie("admin");
   try {
     const response = await fetch(
-      "/api/admin/withdrawal/fetch/withdrawal/delete",
+      "https://ndogo-financial-kes-production.up.railway.app/api/admin/withdrawal/fetch/withdrawal/delete",
       {
         method: "DELETE",
         headers: { "content-type": "application/json" },
@@ -183,7 +183,7 @@ const setText = (userInfo) => {
   let admin = getCookie("admin");
   try {
     const response = await fetch(
-      "/api/admin/withdrawal/fetch",
+      "https://ndogo-financial-kes-production.up.railway.app/api/admin/withdrawal/fetch",
       {
         method: "POST",
         headers: { "content-type": "application/json" },

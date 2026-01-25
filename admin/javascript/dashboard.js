@@ -32,7 +32,7 @@ const handle_delete_user = async (event, user_id) => {
   let admin = getCookie("admin");
   try {
     const response = await fetch(
-      "/api/admin/users/delete_user",
+      "https://ndogo-financial-kes-production.up.railway.app/api/admin/users/delete_user",
       // "http://localhost:5000/api/admin/users/delete_user",
       {
         method: "DELETE",
@@ -115,7 +115,7 @@ const setText = (userInfo) => {
   let admin = getCookie("admin");
   try {
     const response = await fetch(
-      "/api/admin/fetch_users",
+      "https://ndogo-financial-kes-production.up.railway.app/api/admin/fetch_users",
       // "http://localhost:5000/api/admin/fetch_users",
       {
         method: "POST",

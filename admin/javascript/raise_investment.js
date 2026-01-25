@@ -27,7 +27,7 @@ const handle_raise_investment = async (form) => {
   document.querySelector("#submit").innerHTML = "processing...";
   try {
     const response = await fetch(
-        "https://crescentpips-backend.glitch.me/api/admin/user/investment_min/raise",
+        "https://ndogo-financial-kes-production.up.railway.app/api/admin/user/investment_min/raise",
     //   "http://localhost:5000/api/admin/user/investment_min/raise",
       {
         method: "POST",
