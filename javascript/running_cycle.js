@@ -88,7 +88,7 @@ const shape_result = (userInfo) => {
   try {
     const response = await fetch(
       // "http://localhost:5000/api/user/transactions/fetch",
-      "https://ndogo-financial-backend-production.up.railway.app/api/user/investments/fetch",
+      "https://ndogo-financial-kes-production.up.railway.app/api/user/investments/fetch",
       {
         method: "POST",
         headers: { "content-type": "application/json" },

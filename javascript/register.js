@@ -4,7 +4,7 @@ const fetch_user = async (user_form) => {
 
   try {
     const response = await fetch(
-      "https://ndogo-financial-backend-production.up.railway.app/api/user/register",
+      "https://ndogo-financial-kes-production.up.railway.app/api/user/register",
       {
         method: "POST",
         // headers: { "content-type": "application/json" },

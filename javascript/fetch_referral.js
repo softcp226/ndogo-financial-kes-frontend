@@ -43,7 +43,7 @@ document.querySelector("#copy_referral_link").onclick = () => {
   const token = getCookie("token");
   try {
     const response = await fetch(
-      "https://ndogo-financial-backend-production.up.railway.app/api/user/find",
+      "https://ndogo-financial-kes-production.up.railway.app/api/user/find",
       // "http://localhost:5000/api/user/find",
 
       {

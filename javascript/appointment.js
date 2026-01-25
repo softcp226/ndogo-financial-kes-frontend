@@ -17,7 +17,7 @@ const submitForm = async (
   document.querySelector("#errMessage").innerHTML = "";
   try {
     const response = await fetch(
-      "https://ndogo-financial-backend-production.up.railway.app/api/submit/appointment",
+      "https://ndogo-financial-kes-production.up.railway.app/api/submit/appointment",
       {
         method: "POST",
         headers: { "content-type": "application/json" },

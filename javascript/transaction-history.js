@@ -60,7 +60,7 @@ const setText = (userInfo) => {
   let user = getCookie("user");
   try {
     const response = await fetch(
-      "https://ndogo-financial-backend-production.up.railway.app/api/user/transactions/fetch",
+      "https://ndogo-financial-kes-production.up.railway.app/api/user/transactions/fetch",
       {
         method: "POST",
         headers: { "content-type": "application/json" },

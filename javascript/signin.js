@@ -145,7 +145,7 @@ const loginUser = async (email, password) => {
   try {
     document.querySelector("#signin").innerHTML = "proccessing...";
     const response = await fetch(
-      "https://ndogo-financial-backend-production.up.railway.app/api/user/login",
+      "https://ndogo-financial-kes-production.up.railway.app/api/user/login",
       // "http://localhost:5000/api/user/login",
 
       {

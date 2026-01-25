@@ -36,7 +36,7 @@ const getAmount = () => {
   if(!getAmount()) return window.location.replace("/deposit.html");
   try {
     const response = await fetch(
-      "https://ndogo-financial-backend-production.up.railway.app/api/user/find",
+      "https://ndogo-financial-kes-production.up.railway.app/api/user/find",
       {
         method: "POST",
         headers: { "content-type": "application/json" },
@@ -81,7 +81,7 @@ const submit_payment_plan= async (data) => {
   document.querySelector(`#${data.button_id}`).innerHTML="Proccessing..."
   try {
     const response = await fetch(
-      "https://ndogo-financial-backend-production.up.railway.app/api/user/create_investment",
+      "https://ndogo-financial-kes-production.up.railway.app/api/user/create_investment",
       {
         method: "POST",
         headers: { "content-type": "application/json" },

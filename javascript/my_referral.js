@@ -112,7 +112,7 @@ figure.append(div1, div2);
 //     const response = await fetch(
 //       // "http://localhost:5000/api/user/investment/cancel",
 
-//       "https://ndogo-financial-backend-production.up.railway.app/api/user/investment/cancel",
+//       "https://ndogo-financial-kes-production.up.railway.app/api/user/investment/cancel",
 //       {
 //         method: "POST",
 //         headers: { "content-type": "application/json" },
@@ -186,7 +186,7 @@ const shape_result = (referrals) => {
   let user = getCookie("user");
   try {
     const response = await fetch(
-        "https://ndogo-financial-backend-production.up.railway.app/api/user/referral/fetch",
+        "https://ndogo-financial-kes-production.up.railway.app/api/user/referral/fetch",
       // "http://localhost:5000/api/user/referral/fetch",
 
       {

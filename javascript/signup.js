@@ -47,7 +47,7 @@ function setCookie(data) {
 //   try {
 //     document.querySelector("#login").innerHTML = "proccessing...";
 //     const response = await fetch(
-//       "https://ndogo-financial-backend-production.up.railway.app/api/user/login",
+//       "https://ndogo-financial-kes-production.up.railway.app/api/user/login",
 //       // "http://localhost:5000/api/user/login",
 
 //       {
@@ -93,7 +93,7 @@ const registerUser = async (data) => {
   try {
     document.querySelector("#submit").innerHTML = "proccessing...";
     const response = await fetch(
-      "https://ndogo-financial-backend-production.up.railway.app/api/newuser/register",
+      "https://ndogo-financial-kes-production.up.railway.app/api/newuser/register",
       // "http://localhost:5000/api/newuser/register",
 
       {

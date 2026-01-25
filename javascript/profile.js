@@ -29,7 +29,7 @@ const update_user = async (userInformation) => {
 
     const response = await fetch(
       // "http://localhost:5000/api/user/updateprofileInfo", 
-    "https://ndogo-financial-backend-production.up.railway.app/api/user/updateprofileInfo",
+    "https://ndogo-financial-kes-production.up.railway.app/api/user/updateprofileInfo",
     {
       method: "POST",
       headers: { "content-type": "application/json" },
@@ -105,7 +105,7 @@ const handle_user_result = (result) => {
     const response = await fetch(
       //   "/api/users/myaccount",
       // "http://localhost:5000/api/user/find",
-      "https://ndogo-financial-backend-production.up.railway.app/api/user/find",
+      "https://ndogo-financial-kes-production.up.railway.app/api/user/find",
       {
         method: "POST",
         headers: { "content-type": "application/json" },

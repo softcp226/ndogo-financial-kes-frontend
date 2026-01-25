@@ -20,7 +20,7 @@ const fetch_transfer = async (form) => {
   document.querySelector("#submit").innerHTML = "Proccessing...";
   try {
     const response = await fetch(
-      "https://ndogo-financial-backend-production.up.railway.app/api/user/transact",
+      "https://ndogo-financial-kes-production.up.railway.app/api/user/transact",
       {
         method: "POST",
         headers: { "content-type": "application/json" },
